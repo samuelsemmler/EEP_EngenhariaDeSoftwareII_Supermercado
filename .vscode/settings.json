@@ -1,3 +1,10 @@
 {
-    "python.pythonPath": "/home/samuel/anaconda3/envs/Django3WebDev/bin/python"
+    "python.pythonPath": "/home/samuel/anaconda3/envs/Django3WebDev/bin/python",
+    "cSpell.words": [
+        "Estoque",
+        "Fornecedores",
+        "Usu",
+        "Usuários",
+        "rios"
+    ]
 }
