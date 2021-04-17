@@ -1,0 +1,24 @@
+from crud.models import Estoque, Produto, Fornecedor
+
+forn1 = Fornecedor()
+forn1.save()
+
+prod1 = Produto()
+
+
+
+
+
+
+
+
+    # produto_tipo = models.CharField(max_length=1, choices=(
+    #     (0, 'Alimentação'),
+    #     (1, 'Eletrônico'),
+    #     (2, 'Higiene'),
+    #     (3, 'Eletrodoméstico'),
+    #     (4, 'Cama'),
+    #     (5, 'Mesa'),
+    #     (6, 'Banho'),
+    # ))
+    # produto_preco = models.IntegerField
