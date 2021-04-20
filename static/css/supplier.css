@@ -1,0 +1,25 @@
+.navbar-supplier {
+    background-color: #4723D9;
+}
+
+.navbar-supplier a {
+    color: white;
+}
+
+table tr a {
+    margin: 3px;
+}
+
+table {
+    width: 100%;
+}
+
+table, th, td {
+    border: 1px solid black;
+    width: 100%;
+}
+
+tr td:last-child {
+    width: 1%;
+    white-space: nowrap;
+}

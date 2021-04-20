@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} Fornecedores - Deletar {% endblock %}</title>
+</head>
+<body>
+    {% block body %}
+    {% include "supplier-base.html" %}
+
+    <form method="POST">
+        {% csrf_token %}
+
+        <h2>Are you sure you want to delete {{ supplier.fornecedor_nome }}</h2>
+        <button type="submit">Confirm</button>
+    </form>
+
+    {% endblock %}
+</body>
+</html>

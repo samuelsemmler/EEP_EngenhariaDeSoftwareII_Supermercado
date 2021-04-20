@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} Fornecedores {% endblock %}</title>
+</head>
+<body>
+    {% block body %}
+    {% include "supplier-base.html" %}
+
+    <table>
+        <tr>
+            <th>Nome</th>
+            <th>E-mail</th>
+            <th>Endereco</th>
+            <th>Comentarios</th>
+        </tr>
+        {% for fornecedor in supplier %}
+            <tr>
+                <th> {{fornecedor.fornecedor_nome}} </th>
+                <th> {{fornecedor.fornecedor_email}} </th>
+                <th> {{fornecedor.fornecedor_endereco}} </th>
+                <th> {{fornecedor.fornecedor_comentarios}} </th>
+                <th>
+                    <a href="{% url 'suppliers:supplier_detail' fornecedor.id %}" class="btn btn-success btn-rounded">Detalhes</a>
+                    <a href="{% url 'suppliers:supplier_update' fornecedor.id %}" class="btn btn-info btn-rounded">Atualizar</a>
+                    <a href="{% url 'suppliers:supplier_remove' fornecedor.id %}" class="btn btn-danger btn-rounded" type="submit">Remover</a>
+                </th>
+            </tr>
+        {% endfor %}
+    </table>
+    {% endblock %}
+</body>
+</html>

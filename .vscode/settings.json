@@ -1,10 +1,22 @@
 {
     "python.pythonPath": "D:\\Interpreters\\anaconda3\\envs\\Django3WebDev\\python.exe",
     "cSpell.words": [
+        "Adicionar",
+        "Atualizar",
+        "Detalhes",
         "Estoque",
+        "Formul",
+        "Formulário",
         "Fornecedores",
         "Usu",
         "Usuários",
+        "comentarios",
+        "endereco",
+        "fornecedor",
+        "gmail",
+        "preco",
+        "rio",
         "rios"
-    ]
+    ],
+    "cSpell.language": "en"
 }

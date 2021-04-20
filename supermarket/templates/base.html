@@ -21,6 +21,7 @@
     <!-- ===== CSS ===== -->
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     <link rel="stylesheet" href="{% static 'css/users.css' %}">
+    <link rel="stylesheet" href="{% static 'css/supplier.css' %}">
 
     <title>{% block title %} Supermarket {% endblock %}</title>
 </head>
@@ -50,24 +51,14 @@
                         <span class="nav__name">Estoque</span>
                     </a>
 
-                    <a href="{% url 'users' %}" class="nav__link">
+                    <a href="#" class="nav__link">
                         <i class='bx bx-user nav__icon'></i>
                         <span class="nav__name">Usuários</span>
                     </a>
 
-                    <a href="#" class="nav__link">
+                    <a href="{% url 'suppliers:suppliers_list' %}" class="nav__link">
                         <i class='bx bx-message-square-detail nav__icon'></i>
                         <span class="nav__name">Fornecedores</span>
-                    </a>
-
-                    <!-- <a href="#" class="nav__link">
-                        <i class='bx bx-bookmark nav__icon'></i>
-                        <span class="nav__name">Favorites</span>
-                    </a>
-
-                    <a href="#" class="nav__link">
-                        <i class='bx bx-folder nav__icon'></i>
-                        <span class="nav__name">Data</span> -->
                     </a>
 
                     <a href="#" class="nav__link">
