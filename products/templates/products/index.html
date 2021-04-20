@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} Produtos {% endblock %}</title>
+</head>
+<body>
+    {% block body %}
+    {% include "product-base.html" %}
+
+    {% for product, suppliers in data %}
+        <div class="product-list-details">
+            <a href="{% url 'products:product_details' product.id %}" class="btn btn-success btn-rounded">Detalhes</a>
+            <a href="{% url 'products:product_update' product.id %}" class="btn btn-info btn-rounded">Atualizar</a>
+            <a href="{% url 'products:product_remove' product.id %}" class="btn btn-danger btn-rounded">Remover</a>
+        </div>
+
+        <div class="product-list">
+            <h1>{{product.produto_nome}} -- {{product.produto_tipo}} -- {{product.produto_preco}} -- {{product.produto_quantidade}}</h1>
+
+            {% for supplier in suppliers %}
+                Fornecedor: {{supplier.fornecedor_nome}} {{supplier.fornecedor_cidade}} {{supplier.fornecedor_pais}} <br>
+            {% endfor %}
+        </div>
+    {% endfor %}
+
+
+
+    {% endblock %}
+</body>
+</html>

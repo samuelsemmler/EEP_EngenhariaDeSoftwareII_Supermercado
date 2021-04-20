@@ -9,3 +9,6 @@ class Fornecedor(models.Model):
     fornecedor_cidade = models.CharField(max_length=200, default='Localization')
     fornecedor_pais = models.CharField(max_length=200, default='Localization')
     fornecedor_comentarios = models.TextField(blank=True)
+
+    def __str__(self):
+        return self.fornecedor_nome

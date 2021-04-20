@@ -19,8 +19,8 @@
     <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
 
     <!-- ===== CSS ===== -->
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-    <link rel="stylesheet" href="{% static 'css/users.css' %}">
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/products.css' %}">
     <link rel="stylesheet" href="{% static 'css/supplier.css' %}">
 
     <title>{% block title %} Supermarket {% endblock %}</title>
@@ -46,9 +46,14 @@
                 </a>
 
                 <div class="nav__list">
-                    <a href="#" class="nav__link active">
+                    <a href="#" class="nav__link">
                         <i class='bx bx-grid-alt nav__icon'></i>
                         <span class="nav__name">Estoque</span>
+                    </a>
+
+                    <a href="{% url 'products:products_list' %}" class="nav__link">
+                        <i class='bx bx-food-menu nav__icon'></i>
+                        <span class="nav__name">Produtos</span>
                     </a>
 
                     <a href="#" class="nav__link">

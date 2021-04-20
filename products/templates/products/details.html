@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} Produtos - Detalhes {% endblock %}</title>
+</head>
+<body>
+    {% block body %}
+    {% include "product-base.html" %}
+
+    {% for product, suppliers in data %}
+        <div class="product-list">
+            <h1>Nome: {{product.produto_nome}}</h1>
+            <h2>Tipo: {{product.produto_tipo}}</h2>
+            <h3>Preço: {{product.produto_preco}}</h3>
+            <h3>Quantidade: {{product.produto_quantidade}}</h3>
+            <h3>Vendedor {{product.produto_nome_vendedor}}</h3>
+            <h3>Data de venda: {{product.produto_venda_data}}</h3>
+
+            <br><br>
+            <h1>Fornecedores</h1>
+            <br><br>
+
+            {% for supplier in suppliers %}
+                <p>Nome do fornecedor: {{supplier.fornecedor_nome}} </p>
+                <p>Empresa: {{supplier.fornecedor_nome_empresa}} </p>
+                <p>E-mail: {{supplier.fornecedor_email}} </p>
+                <p>Endereço: {{supplier.fornecedor_endereco}} </p>
+                <p>Cidade: {{supplier.fornecedor_cidade}} </p>
+                <p>País: {{supplier.fornecedor_pais}} </p>
+                <p>Comentários adicionais: {{supplier.fornecedor_comentarios}} </p>
+                <br>
+            {% endfor %}
+
+        </div>
+    {% endfor %}
+
+
+
+    {% endblock %}
+</body>
+</html>

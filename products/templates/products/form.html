@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} Produtos - Formulário {% endblock %}</title>
+</head>
+<body>
+    {% block body %}
+    {% include "product-base.html" %}
+
+    <form method="POST">
+        {% csrf_token %}
+        <div class="container">
+            <div class="title">Registro de fornecedor</div>
+            <div class="content">
+                <form action="#">
+                    <div class="user-details">
+                        <div class="input-box">
+                            <span class="details">Nome</span>
+                            {{ form.produto_nome }}
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Tipo</span>
+                            {{ form.produto_tipo }}
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Preço</span>
+                            {{ form.produto_preco }}
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Quantidade</span>
+                            {{ form.produto_quantidade }}
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Vendedor</span>
+                            {{ form.produto_nome_vendedor}}
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Deata de entrada</span>
+                            {{ form.produto_venda_data}}
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Fornecedor(es)</span>
+                            {{ form.fornecedor_pk}}
+                        </div>
+                    </div>
+                    <div class="button">
+                        <input type="submit" value="Register">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </form>
+
+
+
+    
+
+    {% endblock %}
+</body>
+</html>

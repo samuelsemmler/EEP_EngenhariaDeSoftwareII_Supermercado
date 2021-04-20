@@ -1,20 +1,21 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %} Fornecedores - Formulário {% endblock %}</title>
+    <title>{% block title %} Fornecedores - Deletar {% endblock %}</title>
 </head>
 <body>
     {% block body %}
-    {% include "supplier-base.html" %}
+    {% include "product-base.html" %}
 
     <form method="POST">
         {% csrf_token %}
-        {{ form }}
-        <button type="submit" class="btn btn-success btn-rounded">Save</button>
+
+        <h2>Are you sure you want to delete {{ product.produto_nome }}</h2>
+        <button type="submit">Confirm</button>
     </form>
 
     {% endblock %}
