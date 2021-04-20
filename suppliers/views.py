@@ -12,7 +12,7 @@ def suppliers_list(request):
         'supplier': supplier
     }
 
-    return render(request, 'supplier-list.html', context)
+    return render(request, 'index.html', context)
 
 
 def supplier_detail(request, supplier_id):
@@ -22,7 +22,7 @@ def supplier_detail(request, supplier_id):
         'supplier': supplier
     }
 
-    return render(request, 'supplier-details.html', context)
+    return render(request, 'details.html', context)
 
 
 def supplier_add(request):
@@ -34,7 +34,7 @@ def supplier_add(request):
     context = {
         'form': form
     }
-    return render(request, 'supplier-form.html', context)
+    return render(request, 'form.html', context)
 
 
 def supplier_update(request, supplier_id):
@@ -49,7 +49,7 @@ def supplier_update(request, supplier_id):
         'form': form,
         'supplier': supplier,
     }
-    return render(request, 'supplier-form.html', context)
+    return render(request, 'form.html', context)
 
 
 def supplier_remove(request, supplier_id):
@@ -62,5 +62,5 @@ def supplier_remove(request, supplier_id):
     context = {
         'supplier': supplier
     }
-    return render(request, 'supplier-delete.html', context)
+    return render(request, 'delete.html', context)
     
