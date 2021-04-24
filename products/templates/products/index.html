@@ -8,8 +8,14 @@
     <title>{% block title %} Produtos {% endblock %}</title>
 </head>
 <body>
+
     {% block body %}
     {% include "product-base.html" %}
+
+    {% if user.is_authenticated %}
+        <p>ola</p>
+        {{ user.profile.status  }}
+    {% endif %}
 
     {% for product, suppliers in data %}
         <div class="product-list-details">

@@ -56,7 +56,7 @@
                         <span class="nav__name">Produtos</span>
                     </a>
 
-                    <a href="{% url 'profile' %}" class="nav__link">
+                    <a href="{% url 'profile' user.pk %}" class="nav__link">
                         <i class='bx bx-user nav__icon'></i>
                         <span class="nav__name">Usuários</span>
                     </a>
@@ -79,6 +79,14 @@
             </a>
         </nav>
     </div>
+
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
 
     {% block body %}
 

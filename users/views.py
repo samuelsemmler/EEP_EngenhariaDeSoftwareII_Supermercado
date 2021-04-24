@@ -1,6 +1,8 @@
+from django.contrib.auth.models import User
 from django.shortcuts import redirect, render
 from django.contrib.auth.decorators import login_required
 from .forms import RegisterForm
+from .models import Profile
 from django.contrib import messages
 
 # Create your views here.
@@ -21,6 +23,10 @@ def register(request):
 
 
 @login_required
-def profile_page(request):
-    context = {}
+def profile_page(request, pk):
+    form = Profile(request.user)
+
+    context = {
+        'form': form,
+    }
     return render(request, 'users/profile.html', context)
