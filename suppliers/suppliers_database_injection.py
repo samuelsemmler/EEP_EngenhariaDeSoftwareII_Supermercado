@@ -1,4 +1,4 @@
-from crud.models import Fornecedor
+from suppliers.models import Fornecedor
 
 
 #Criando vários fornecedores

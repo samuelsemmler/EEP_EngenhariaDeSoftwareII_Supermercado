@@ -4,10 +4,13 @@
         "Adicionar",
         "Atualizar",
         "Detalhes",
+        "Editar",
         "Estoque",
         "Formul",
         "Formulário",
         "Fornecedores",
+        "Imagem",
+        "Perfil",
         "Produtos",
         "Usu",
         "Usuários",
@@ -19,5 +22,5 @@
         "rio",
         "rios"
     ],
-    "cSpell.language": "en"
+    "cSpell.language": "en,pt-BR"
 }
