@@ -35,7 +35,11 @@
         </div>
 
         <div class="header__img">
-            <img src="{% static 'img/perfil.jpg' %}" alt="">
+            {% if user.is_authenticated %}
+                <img src="{{ user.profile.usuario_imagem.url }}" alt="">
+            {% else %}
+                <img src="{% static 'img/perfil.jpg' %}" alt="">
+            {% endif %}
         </div>
     </header>
 

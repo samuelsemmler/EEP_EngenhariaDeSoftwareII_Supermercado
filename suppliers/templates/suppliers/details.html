@@ -13,21 +13,14 @@
     {% block body %}
     {% include "supplier-base.html" %}
 
-    <br><br><br><br>
-
     <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <h1>Nome do fornecedor: {{supplier.fornecedor_nome}} </h1>
-                <h2>Empresa: {{supplier.fornecedor_nome_empresa}} </h2>
-                <h3>E-mail: {{supplier.fornecedor_email}} </h3>
-                <h3>Endereço: {{supplier.fornecedor_endereco}} </h3>
-                <h3>Cidade: {{supplier.fornecedor_cidade}} </h3>
-                <h3>País: {{supplier.fornecedor_pais}} </h3>
-                <h4>Comentários adicionais: {{supplier.fornecedor_comentarios}} </h4>
-                <a href="#">Delete</a>
-            </div>
-        </div>
+        <h1>Nome do fornecedor: {{supplier.fornecedor_nome}} </h1>
+        <h2>Empresa: {{supplier.fornecedor_nome_empresa}} </h2>
+        <h3>E-mail: {{supplier.fornecedor_email}} </h3>
+        <h3>Endereço: {{supplier.fornecedor_endereco}} </h3>
+        <h3>Cidade: {{supplier.fornecedor_cidade}} </h3>
+        <h3>País: {{supplier.fornecedor_pais}} </h3>
+        <h4>Comentários adicionais: {{supplier.fornecedor_comentarios}} </h4>
     </div>
     
     {% endblock %}
