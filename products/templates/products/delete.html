@@ -11,12 +11,14 @@
     {% block body %}
     {% include "product-base.html" %}
 
-    <form method="POST">
-        {% csrf_token %}
+    {% if user.profile.get_usuario_status_display == "Supervisor" %}
+        <form method="POST">
+            {% csrf_token %}
 
-        <h2>Are you sure you want to delete {{ product.produto_nome }}</h2>
-        <button type="submit">Confirm</button>
-    </form>
+            <h2>Are you sure you want to delete {{ product.produto_nome }}</h2>
+            <button type="submit">Confirm</button>
+        </form>
+    {% endif %}
 
     {% endblock %}
 </body>

@@ -15,49 +15,51 @@
     {% block body %}
     {% include "supplier-base.html" %}
 
-    <form method="POST">
-        {% csrf_token %}
-        <div class="container">
-            <div class="title">Registro de fornecedor</div>
-            <div class="content">
-                <form action="#">
-                    <div class="user-details">
-                        <div class="input-box">
-                            <span class="details">Nome</span>
-                            {{ form.fornecedor_nome }}
+    {% if user.profile.get_usuario_status_display == "Supervisor" %}
+        <form method="POST">
+            {% csrf_token %}
+            <div class="container">
+                <div class="title">Registro de fornecedor</div>
+                <div class="content">
+                    <form action="#">
+                        <div class="user-details">
+                            <div class="input-box">
+                                <span class="details">Nome</span>
+                                {{ form.fornecedor_nome }}
+                            </div>
+                            <div class="input-box">
+                                <span class="details">Empresa</span>
+                                {{ form.fornecedor_nome_empresa }}
+                            </div>
+                            <div class="input-box">
+                                <span class="details">Email</span>
+                                {{ form.fornecedor_email }}
+                            </div>
+                            <div class="input-box">
+                                <span class="details">Endereço</span>
+                                {{ form.fornecedor_endereco }}
+                            </div>
+                            <div class="input-box">
+                                <span class="details">Cidade</span>
+                                {{ form.fornecedor_cidade}}
+                            </div>
+                            <div class="input-box">
+                                <span class="details">País</span>
+                                {{ form.fornecedor_pais}}
+                            </div>
+                            <div class="input-box">
+                                <span class="details">Comentários</span>
+                                {{ form.fornecedor_comentarios}}
+                            </div>
                         </div>
-                        <div class="input-box">
-                            <span class="details">Empresa</span>
-                            {{ form.fornecedor_nome_empresa }}
+                        <div class="button">
+                            <input type="submit" value="Register">
                         </div>
-                        <div class="input-box">
-                            <span class="details">Email</span>
-                            {{ form.fornecedor_email }}
-                        </div>
-                        <div class="input-box">
-                            <span class="details">Endereço</span>
-                            {{ form.fornecedor_endereco }}
-                        </div>
-                        <div class="input-box">
-                            <span class="details">Cidade</span>
-                            {{ form.fornecedor_cidade}}
-                        </div>
-                        <div class="input-box">
-                            <span class="details">País</span>
-                            {{ form.fornecedor_pais}}
-                        </div>
-                        <div class="input-box">
-                            <span class="details">Comentários</span>
-                            {{ form.fornecedor_comentarios}}
-                        </div>
-                    </div>
-                    <div class="button">
-                        <input type="submit" value="Register">
-                    </div>
-                </form>
+                    </form>
+                </div>
             </div>
-        </div>
-    </form>
+        </form>
+    {% endif %}
 
     {% endblock %}
 </body>

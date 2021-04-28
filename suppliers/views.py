@@ -1,10 +1,12 @@
 from django.shortcuts import redirect, render
+from django.contrib.auth.decorators import login_required
 from .models import Fornecedor
 from .forms import FornecedorForm
 
 # Create your views here.
 
 
+@login_required
 def suppliers_list(request):
     supplier = Fornecedor.objects.all()
 
@@ -15,6 +17,7 @@ def suppliers_list(request):
     return render(request, 'suppliers/index.html', context)
 
 
+@login_required
 def supplier_detail(request, supplier_id):
     supplier = Fornecedor.objects.get(id=supplier_id)
 
@@ -25,6 +28,7 @@ def supplier_detail(request, supplier_id):
     return render(request, 'suppliers/details.html', context)
 
 
+@login_required
 def supplier_add(request):
     form = FornecedorForm(request.POST or None)
     if form.is_valid():
@@ -37,6 +41,7 @@ def supplier_add(request):
     return render(request, 'suppliers/form.html', context)
 
 
+@login_required
 def supplier_update(request, supplier_id):
     supplier = Fornecedor.objects.get(id=supplier_id)
     form = FornecedorForm(request.POST or None, instance=supplier)
@@ -52,6 +57,7 @@ def supplier_update(request, supplier_id):
     return render(request, 'suppliers/form.html', context)
 
 
+@login_required
 def supplier_remove(request, supplier_id):
     supplier = Fornecedor.objects.get(id=supplier_id)
 

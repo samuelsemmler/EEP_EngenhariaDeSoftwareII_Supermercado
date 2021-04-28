@@ -16,7 +16,8 @@
     flex: 1;
     padding: 1rem;
     border-right: 2px solid black;
-}  
+    text-align: center;
+}
 
 /* .product-row:first-child {
     margin-right: 20px;  

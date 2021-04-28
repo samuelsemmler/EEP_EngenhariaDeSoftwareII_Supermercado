@@ -11,27 +11,37 @@
     {% block body %}
     {% include "supplier-base.html" %}
 
-    <table>
-        <tr>
-            <th>Nome</th>
-            <th>E-mail</th>
-            <th>Endereco</th>
-            <th>Comentarios</th>
-        </tr>
-        {% for fornecedor in supplier %}
-            <tr>
-                <th> {{fornecedor.fornecedor_nome}} </th>
-                <th> {{fornecedor.fornecedor_email}} </th>
-                <th> {{fornecedor.fornecedor_endereco}} </th>
-                <th> {{fornecedor.fornecedor_comentarios}} </th>
-                <th>
-                    <a href="{% url 'suppliers:supplier_detail' fornecedor.id %}" class="btn btn-success btn-rounded">Detalhes</a>
-                    <a href="{% url 'suppliers:supplier_update' fornecedor.id %}" class="btn btn-info btn-rounded">Atualizar</a>
-                    <a href="{% url 'suppliers:supplier_remove' fornecedor.id %}" class="btn btn-danger btn-rounded" type="submit">Remover</a>
-                </th>
-            </tr>
-        {% endfor %}
-    </table>
+    <div style="text-align:center;">
+        <table class="supplier-table">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>E-mail</th>
+                    <th>Endereço</th>
+                    <th>Comentários</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for fornecedor in supplier %}
+                    <tr>
+                        <th> {{fornecedor.fornecedor_nome}} </th>
+                        <th> {{fornecedor.fornecedor_email}} </th>
+                        <th> {{fornecedor.fornecedor_endereco}} </th>
+                        <th> {{fornecedor.fornecedor_comentarios}} </th>
+                        <th>
+                            <a href="{% url 'suppliers:supplier_detail' fornecedor.id %}" class="btn btn-success btn-rounded">Detalhes</a>
+                            {% if user.profile.get_usuario_status_display == "Supervisor" %}
+                                <a href="{% url 'suppliers:supplier_update' fornecedor.id %}" class="btn btn-info btn-rounded">Atualizar</a>
+                                <a href="{% url 'suppliers:supplier_remove' fornecedor.id %}" class="btn btn-danger btn-rounded" type="submit">Remover</a>
+                            {% endif %}
+                        </th>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+    </div>
     {% endblock %}
 </body>
 </html>

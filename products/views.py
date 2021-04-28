@@ -1,9 +1,12 @@
 from products.forms import ProdutoForm
 from django.shortcuts import redirect, render
+from django.contrib.auth.decorators import login_required
 from .models import Produto
 from suppliers.models import Fornecedor
 
 # Create your views here.
+
+@login_required
 def products_list(request):
     product = Produto.objects.all()
     higher = 0
@@ -20,6 +23,7 @@ def products_list(request):
     return render(request, 'products/index.html', context)
 
 
+@login_required
 def product_add(request):
     form = ProdutoForm(request.POST or None)
     if form.is_valid():
@@ -32,6 +36,7 @@ def product_add(request):
     return render(request, 'products/form.html', context)
 
 
+@login_required
 def product_details(request, product_id):
     product = Produto.objects.filter(id=product_id)
     suppliers = []
@@ -44,6 +49,7 @@ def product_details(request, product_id):
     return render(request, 'products/details.html', context)
 
 
+@login_required
 def product_update(request, product_id):
     product = Produto.objects.filter(id=product_id).first()
     form = ProdutoForm(request.POST or None, instance=product)
@@ -59,6 +65,7 @@ def product_update(request, product_id):
     return render(request, 'products/form.html', context)
 
 
+@login_required
 def product_remove(request, product_id):
     product = Produto.objects.filter(id=product_id).first()
 
