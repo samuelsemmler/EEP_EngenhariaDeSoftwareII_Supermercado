@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="{% static 'css/forms.css' %}">
     <link rel="stylesheet" href="{% static 'css/products.css' %}">
     <link rel="stylesheet" href="{% static 'css/supplier.css' %}">
+    <link rel="stylesheet" href="{% static 'css/users.css' %}">
 
     <title>{% block title %} Supermarket {% endblock %}</title>
 </head>
@@ -57,7 +58,7 @@
                         <span class="nav__name">Produtos</span>
                     </a>
 
-                    <a href="#" class="nav__link">
+                    <a href="{% url 'users:profile' %}" class="nav__link">
                         <i class='bx bx-user nav__icon'></i>
                         <span class="nav__name">Usuários</span>
                     </a>

@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} Usurários - Login {% endblock %}</title>
+</head>
+<body>
+    {% block body %}
+    {% include "user-base.html" %}
+
+    <form method="POST">
+        {% csrf_token %}
+        
+        {% if form.errors %}
+            {% for field in form %}
+                {% for error in field.errors %}
+                    <div class="alert alert-danger">
+                        <strong>{{ error|escape }}</strong>
+                    </div>
+                {% endfor %}
+            {% endfor %}
+            {% for error in form.non_field_errors %}
+                <div class="alert alert-danger">
+                    <strong>{{ error|escape }}</strong>
+                </div>
+            {% endfor %}
+        {% endif %}
+        
+        <div class="container">
+            <div class="title">Login</div>
+            <div class="content">
+                <form action="#">
+                    <div class="user-details">
+                        <div class="input-box">
+                            <span class="details">Nome</span>
+                            {{ form.username }}
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Senha</span>
+                            {{ form.password }}
+                        </div>
+                    </div>
+                    <div class="button">
+                        <input type="submit" value="Login">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </form>
+
+    {% endblock %}
+</body>
+</html>

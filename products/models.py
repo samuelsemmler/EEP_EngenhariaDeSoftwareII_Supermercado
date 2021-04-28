@@ -23,5 +23,5 @@ class Produto(models.Model):
     produto_preco = models.FloatField(default=0.0)
     produto_quantidade = models.IntegerField(default=1)
     produto_nome_vendedor = models.CharField(max_length=200, default='Vendedor')
-    produto_venda_data = models.DateField(auto_now_add=True)
+    produto_data_criacao = models.DateField(auto_now_add=True)
     fornecedor_pk = models.ManyToManyField(Fornecedor)

@@ -3,6 +3,7 @@
     "cSpell.words": [
         "Adicionar",
         "Atualizar",
+        "Deslogado",
         "Detalhes",
         "Editar",
         "Estoque",
@@ -15,12 +16,15 @@
         "Usu",
         "Usuários",
         "comentarios",
+        "criacao",
         "endereco",
         "fornecedor",
         "gmail",
+        "movel",
         "preco",
         "rio",
-        "rios"
+        "rios",
+        "usuario"
     ],
     "cSpell.language": "en,pt-BR"
 }

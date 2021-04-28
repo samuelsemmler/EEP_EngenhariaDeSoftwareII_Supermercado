@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} Usurários - Formulário {% endblock %}</title>
+</head>
+<body>
+    {% block body %}
+    {% include "user-base.html" %}
+
+    <form method="POST">
+        {% csrf_token %}
+
+        {% if p_form.errors %}
+            <div class="alert alert-danger alert-dismissible col-12 mx-1" role="alert">
+                <div id="form_errors">
+                    {% for key, value in p_form.errors.items %}
+                        <span class="fieldWrapper">
+                            {{ key }}:{{ value }}
+                        </span>
+                    {% endfor %}
+                </div>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        {% endif %}
+
+        <div class="container">
+            <div class="title">Cadastro de usuário</div>
+            <div class="content">
+                <form action="#">
+                    <div class="user-details">
+                        <div class="input-box">
+                            <span class="details">Nome</span>
+                            {{ form.username }}
+                        </div>
+                        <div class="input-box">
+                            <span class="details">E-mail</span>
+                            {{ form.email }}
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Password 1</span>
+                            {{ form.password1 }}
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Password 2</span>
+                            {{ form.password2 }}
+                        </div>
+                    </div>
+                    <div class="button">
+                        <input type="submit" value="Cadastrar">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </form>
+
+
+
+    
+
+    {% endblock %}
+</body>
+</html>
