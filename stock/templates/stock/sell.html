@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} Fornecedores - Deletar {% endblock %}</title>
+</head>
+<body>
+    {% block body %}
+    {% include "stock-base.html" %}
+
+    <form method="POST">
+        {% csrf_token %}
+
+        <h2>Realmente deseja realizar a venda de: {{ product.produto_nome }}</h2>
+        <button type="submit">Confirm</button>
+    </form>
+
+    {% endblock %}
+</body>
+</html>

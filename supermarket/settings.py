@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'products.apps.ProductsConfig',
     'suppliers.apps.SuppliersConfig',
     'users.apps.UsersConfig',
-    'teams.apps.TeamsConfig'
+    'stock.apps.StockConfig',
+    'teams.apps.TeamsConfig',
 ]
 
 MIDDLEWARE = [
