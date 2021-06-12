@@ -15,7 +15,7 @@
     {% block body %}
     {% include "supplier-base.html" %}
 
-    {% if user.profile.get_usuario_status_display == "Supervisor" %}
+    {% if request.user.is_superuser %}
         <form method="POST">
             {% csrf_token %}
             <div class="container">

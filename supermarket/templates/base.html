@@ -23,7 +23,6 @@
     <link rel="stylesheet" href="{% static 'css/forms.css' %}">
     <link rel="stylesheet" href="{% static 'css/products.css' %}">
     <link rel="stylesheet" href="{% static 'css/supplier.css' %}">
-    <link rel="stylesheet" href="{% static 'css/teams.css' %}">
     <link rel="stylesheet" href="{% static 'css/users.css' %}">
 
     <title>{% block title %} Supermarket {% endblock %}</title>
@@ -71,11 +70,6 @@
                     <a href="{% url 'suppliers:suppliers_list' %}" class="nav__link">
                         <i class='bx bx-message-square-detail nav__icon'></i>
                         <span class="nav__name">Fornecedores</span>
-                    </a>
-
-                    <a href="{% url 'teams:index' %}" class="nav__link">
-                        <i class='bx bx-bar-chart-alt-2 nav__icon'></i>
-                        <span class="nav__name">Equipe</span>
                     </a>
                 </div>
             </div>

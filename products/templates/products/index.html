@@ -33,7 +33,7 @@
 
             <div class="product-row">
                 <a href="{% url 'products:product_details' product.id %}" class="btn btn-success btn-rounded">Detalhes</a>
-                {% if user.profile.get_usuario_status_display == "Supervisor" %}
+                {% if request.user.is_superuser %}
                     <a href="{% url 'products:product_update' product.id %}" class="btn btn-info btn-rounded">Atualizar</a>
                     <a href="{% url 'products:product_remove' product.id %}" class="btn btn-danger btn-rounded">Remover</a>
                 {% endif %} 
@@ -42,13 +42,6 @@
 
         </div>
     {% endfor %}
-
-
-    {% if user.is_authenticated %}
-        <p>ola</p>
-        {{ user.profile.status  }}
-    {% endif %}
-
     {% endblock %}
 </body>
 </html>
